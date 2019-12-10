@@ -26,11 +26,19 @@ for datos in resultado:
     print(datos)
 #mostrar registros especificos de la bd por medio de cadenas de caracteres
 for datos in resultado:
-    print(str(datos[0]) + str(datos[1]))"""
+    print(str(datos[0]) + str(datos[1]))
 
 sqlInsertar = "insert into usuarios(id,nombre,email,pass)values(%s,%s,%s,%s)"
 cursor.execute(sqlInsertar,('11','hola','hola@mundo.com','123'))
 conexion.commit()
 #Creacion de las sentencias para cerrar la conexion (buenas practicas)
+cursor.close()
+conexion.close()"""
+
+#sentencia que permiten imprimit un solo registro consultado
+sql = "select * from usuarios where id = %s"
+cursor.execute(sql,('1',))
+resultados = cursor.fetchone()
+print(resultados)
 cursor.close()
 conexion.close()
