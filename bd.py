@@ -41,12 +41,20 @@ cursor.execute(sql,('1',))
 resultados = cursor.fetchone()
 print(resultados)
 cursor.close()
-conexion.close()"""
+conexion.close()
 
 #creacion de los delete y update
 #update
 sql = "update usuarios set nombre = %s where id = %s"
 cursor.execute(sql,('java','1',))
+resultados = cursor.fetchone()
+conexion.commit()
+cursor.close()
+conexion.close()"""
+
+#delete
+sql = "delete from usuarios where id = %s"
+cursor.execute(sql,('10',))
 resultados = cursor.fetchone()
 conexion.commit()
 cursor.close()
