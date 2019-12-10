@@ -24,7 +24,7 @@ resultado = cursor.fetchall()
 #se crea un for para imprimir por linea cada fila de la consulta
 """for datos in resultado:
     print(datos)"""
-#mostrar registros especificos de la bd
+#mostrar registros especificos de la bd por medio de cadenas de caracteres
 for datos in resultado:
-    print(datos[0] + datos[1])
+    print(str(datos[0]) + str(datos[1]))
 
