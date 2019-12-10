@@ -31,3 +31,6 @@ for datos in resultado:
 sqlInsertar = "insert into usuarios(id,nombre,email,pass)values(%s,%s,%s,%s)"
 cursor.execute(sqlInsertar,('11','hola','hola@mundo.com','123'))
 conexion.commit()
+#Creacion de las sentencias para cerrar la conexion (buenas practicas)
+cursor.close()
+conexion.close()
